@@ -70,7 +70,7 @@ public class ConnectionController : MonoBehaviour
             newSource.destIpInt = destIP;
 
             // Set the protocol so that the game controller can read it
-            newSource.proto = transport;
+            newSource.protocol = transport;
             
             // Add them to the network, and wait for that to finish:
             DeviceManager.Instance.CheckIp(newSource);

@@ -24,7 +24,7 @@ public class HitsData_Snort
 public class Source_Snort
 {
     // Packetbeat stuff
-    public string runtime_timestamp;    // The timestamp of this object
+    public string timestamp;    // The timestamp of this object
     public string sourceIP;
     public string destIP;
 

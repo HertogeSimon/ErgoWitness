@@ -575,7 +575,7 @@ MonoBehaviour:
   monitorManager: {fileID: 0}
   errorText: {fileID: 0}
   frequency: 1
-  indexName: filebeat
+  indexName: logstash
   fileLocation_queryTop: QueryByIP/query_by_ip_TOP
   fileLocation_queryBottom: QueryByIP/query_by_ip_BOTTOM
   _latest_time: 

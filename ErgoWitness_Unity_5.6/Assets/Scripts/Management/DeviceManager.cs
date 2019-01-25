@@ -141,10 +141,10 @@ public class DeviceManager : MonoBehaviour {
             connectionController.CheckPacketbeatData(jsonSourceData.sourceIpInt, jsonSourceData.destIpInt, jsonSourceData.service);
         }
         // Otherwise if it is UDP / TCP traffic...
-        else if (jsonSourceData.proto != null)
+        else if (jsonSourceData.protocol != null)
         {
             // Send the protocol
-            connectionController.CheckPacketbeatData(jsonSourceData.sourceIpInt, jsonSourceData.destIpInt, jsonSourceData.proto);
+            connectionController.CheckPacketbeatData(jsonSourceData.sourceIpInt, jsonSourceData.destIpInt, jsonSourceData.protocol);
         }
     }
 
@@ -172,7 +172,7 @@ public class DeviceManager : MonoBehaviour {
             Source newSource = new Source();
 
             // Set the NEW source's original IP to the response IP of the other one
-            newSource.id_orig_h = source.id_resp_h;
+			newSource.source_ip = source.destination_ip;
             newSource.sourceIpInt = source.destIpInt;
 
             // Set the NEW source's orig. Port to the response port of the other one

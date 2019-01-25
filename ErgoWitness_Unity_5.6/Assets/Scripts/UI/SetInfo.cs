@@ -24,7 +24,7 @@ public class SetInfo : MonoBehaviour {
         try
         {
             protocol.text = data.transport;
-            string[] goodTimes = data.runtime_timestamp.Split('T');
+			string[] goodTimes = data.timestamp.Split('T');
             timestamp.text = goodTimes[1];
             source.text = data.packet_source.ip;
             dest.text = data.dest.ip;
@@ -45,13 +45,13 @@ public class SetInfo : MonoBehaviour {
         try
         {
             // Set the time stamp to actuall be readable
-            string[] goodTimes = data.runtime_timestamp.Split('T');
+			string[] goodTimes = data.logstash_timestamp.Split('T');
             timestamp.text = goodTimes[1];
 
-            source.text = data.id_orig_h;
-            dest.text = data.id_resp_h;
-            //port.text = data.id_resp_p.ToString();
-            protocol.text = data.proto;
+			source.text = data.source_ip;
+            dest.text = data.destination_ip;
+            //port.text = data.destination_port.ToString();
+            protocol.text = data.protocol;
         }
         catch
         {           

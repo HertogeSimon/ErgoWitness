@@ -1,7 +1,7 @@
 } } },
    "_source": {
     "includes": [
-      "runtime_timestamp",
+      "logstash_timestamp",
       "transport",
       "dest.ip",
       "packet_source.ip"

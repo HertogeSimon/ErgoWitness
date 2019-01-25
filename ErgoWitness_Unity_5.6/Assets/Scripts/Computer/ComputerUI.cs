@@ -23,14 +23,14 @@ public class ComputerUI : MonoBehaviour {
     /// <param name="data">The data for us to use</param>
     public void SetValues(Source data)
     {
-        sourceIpText.text = "Source IP: " + data.id_orig_h.ToString();
+		sourceIpText.text = "Source IP: " + data.source_ip.ToString();
         // Source port
-        //sourcePortText.text = "Source Port: " + data.id_orig_p.ToString();
+        //sourcePortText.text = "Source Port: " + data.source_port.ToString();
 
 
-        destIpText.text = "Dest. IP: " + data.id_resp_h.ToString();
+        destIpText.text = "Dest. IP: " + data.destination_ip.ToString();
         // Dest port
-        //destPortText.text = "Dest. Port: " + data.id_resp_p.ToString();
+        //destPortText.text = "Dest. Port: " + data.destination_port.ToString();
 
         if (data.service == null)
         {
@@ -41,13 +41,13 @@ public class ComputerUI : MonoBehaviour {
             serviceText.text = "Service: " + data.service.ToString();
         }
 
-        if (data.proto == null)
+        if (data.protocol == null)
         {
             transportText.text = "Protocol: Null";
         }
         else
         {
-            transportText.text = "Protocol: " + data.proto.ToString();
+            transportText.text = "Protocol: " + data.protocol.ToString();
         }
 
     }

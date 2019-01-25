@@ -32,12 +32,12 @@ public class HitsData
 [System.Serializable]
 public class Source
 {
-    public string runtime_timestamp;    // the timestamp of the object
-    public string id_orig_h;            // source ip
-    public string id_resp_h;            // dest ip
+	public string logstash_timestamp;    // the timestamp of the object
+	public string source_ip;            // source ip
+    public string destination_ip;            // dest ip
 
     public string service;      // dns, dhcp, etc.
-    public string proto;        // udp, tcp, so on
+    public string protocol;        // udp, tcp, so on
 
     public int sourceIpInt;     // Bit converted integer for the source IP
     public int destIpInt;       // Bit converted integer for the dest IP

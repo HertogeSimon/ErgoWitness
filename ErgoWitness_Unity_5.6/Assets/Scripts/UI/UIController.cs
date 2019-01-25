@@ -79,11 +79,12 @@ public class UIController : MonoBehaviour {
     {
         // If the user presses the P button then hide all of the 
         // UI elements
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            // Toggle is we are hiding all the UI or not
-            HideAllUI();
-        }
+		// CRASHES WHEN TYPING LETTER 'p' IN IP INPUT FIELD!
+//        if (Input.GetKeyDown(KeyCode.P))
+//        {	
+//            // Toggle is we are hiding all the UI or not
+//            HideAllUI();
+//        }
 
         // If the user presses start or ESC, then toggle the pause menu
         if (Input.GetButtonDown("Cancel"))

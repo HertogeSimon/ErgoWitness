@@ -126,15 +126,15 @@ public class PlayerClickAction : MonitorObject {
         // Stop the Loading animation if we need one
 
         // Set our latest packetbeat time to the most recent one
-        _latest_time = dataObject.hits.hits[0]._source.runtime_timestamp;
+		_latest_time = dataObject.hits.hits[0]._source.logstash_timestamp;
 
         // Send the data to the game controller for all of our hits
         for (int i = 0; i < dataObject.hits.hits.Length; i++)
         {
             // Display the data
-            proto.text = dataObject.hits.hits[i]._source.proto;
-            //port.text = dataObject.hits.hits[i]._source.id_orig_p.ToString();
-            dest.text = dataObject.hits.hits[i]._source.id_resp_h;
+            proto.text = dataObject.hits.hits[i]._source.protocol;
+            //port.text = dataObject.hits.hits[i]._source.source_port.ToString();
+			dest.text = dataObject.hits.hits[i]._source.destination_ip;
         }
         
         // Stop the monitor, because we only want 1 query

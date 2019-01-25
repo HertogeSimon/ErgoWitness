@@ -33,7 +33,7 @@ public class HitsData_Packet
 public class Source_Packet
 {
     // Packetbeat stuff
-    public string runtime_timestamp;    // The timestamp of this object
+    public string timestamp;    // The timestamp of this object
     public string transport;    // This is where udp/tcp is specified
 
     public DestinationData_Packetbeat dest; 

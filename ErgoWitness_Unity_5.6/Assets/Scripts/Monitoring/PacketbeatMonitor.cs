@@ -22,23 +22,28 @@ public class PacketbeatMonitor : MonitorObject {
 
     public int PacketPerQuery { get { return packetPerQuery; } }
 
+	void Start()
+	{
+		gameObject.SetActive (false);
+	}
+
     /// <summary>
     /// Start the necessary finite state machine with the
     /// specific data for this object
     /// </summary>
     public override void StartMonitor()
     {
-        // Make sure that the FSM knows we are starting again
-        base.StartMonitor();
-
-        // Instantiate the data for our request
-        _packetbeatJsonData = new Packetbeat_Json_Data();
-
-        // Start the finite satate machine for the web request
-        StartCoroutine(FSM(_packetbeatJsonData));
-
-
-        checkingState = CheckDataStates.Done;
+//        // Make sure that the FSM knows we are starting again
+//        base.StartMonitor();
+//
+//        // Instantiate the data for our request
+//        _packetbeatJsonData = new Packetbeat_Json_Data();
+//
+//        // Start the finite satate machine for the web request
+//        StartCoroutine(FSM(_packetbeatJsonData));
+//
+//
+//        checkingState = CheckDataStates.Done;
     }
 
     /// <summary>
@@ -102,7 +107,7 @@ public class PacketbeatMonitor : MonitorObject {
         // ============= Keep track of stuff to prevent duplicates =======================
         packetPerQuery = 0;
         // Set our latest packetbeat time to the most recent one
-        _latest_time = packetDataObj.hits.hits[packetDataObj.hits.hits.Length - 1]._source.runtime_timestamp;
+		_latest_time = packetDataObj.hits.hits[packetDataObj.hits.hits.Length - 1]._source.timestamp;
         checkingState = CheckDataStates.Running;
         // ============== Actually loop through our hits data  =========================
         for (int i = 0; i < packetDataObj.hits.hits.Length; i++)

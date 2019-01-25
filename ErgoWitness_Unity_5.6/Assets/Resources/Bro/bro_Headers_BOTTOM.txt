@@ -1,11 +1,11 @@
 } } },
   "_source": {
     "includes": [
-      "runtime_timestamp",
-      "id_orig_h",
-      "id_resp_h",
+      "logstash_timestamp",
+      "source_ip",
+      "destination_ip",
 	  "service",
-      "proto"
+      "protocol"
     ]
   }, "size": 50,
   "sort": [

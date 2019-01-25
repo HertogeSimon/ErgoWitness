@@ -128,11 +128,11 @@ public class ManageMonitors : MonoBehaviour {
     {
         // Calculate the INTEGER version of the SOURCE IP address
         FilebeatSource.sourceIpInt =
-            IpToInt(FilebeatSource.id_orig_h);
+			IpToInt(FilebeatSource.source_ip);
 
         // Calculate the INTEGER version of the DESTINATION IP address
         FilebeatSource.destIpInt =
-            IpToInt(FilebeatSource.id_resp_h);
+			IpToInt(FilebeatSource.destination_ip);
     }
 
     #endregion

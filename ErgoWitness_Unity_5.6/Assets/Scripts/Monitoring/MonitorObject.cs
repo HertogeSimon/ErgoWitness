@@ -326,7 +326,8 @@ public class MonitorObject : MonoBehaviour {
                 errorText.text = "There was a HTTP request error! Check your Server IP in the options tab!";
             // If we are in the editor, then print the error to the console
 #if UNITY_EDITOR
-                Debug.Log("Index " + indexName + " The HTTP request text:\n" + myRequest.error);
+                Debug.Log("The HTTP request text:\n" + myRequest.error);
+				Debug.Log("The URL was: " + url);
                 Debug.Log("The query was: " + _current_Query);
 #endif
             
@@ -368,7 +369,7 @@ public class MonitorObject : MonoBehaviour {
         if ( _UseRealTime)
         {
             // Build the query using the latest timestamp
-            query = _query_TOP + "\"gt\":" + "\"" + _latest_time + "\"" + _query_BOTTOM;
+			query = _query_TOP + "\"gt\":" + "\"" + _latest_time + "\"" + _query_BOTTOM;
         }
         // If we want to use a custom query and we had a previous success...
         else if (!_UseRealTime)

@@ -96,7 +96,7 @@ public class BroMonitor : MonitorObject {
         // ============= Keep track of stuff to prevent duplicates ===============
 
         // Set our latest packetbeat time to the most recent one
-        _latest_time = dataObject.hits.hits[0]._source.runtime_timestamp;
+		_latest_time = dataObject.hits.hits[0]._source.logstash_timestamp;
 
         packetPerQuery++;
         // Keep track of the state of this data checking
@@ -132,11 +132,11 @@ public class BroMonitor : MonitorObject {
     {
         // Calculate the INTEGER version of the SOURCE IP address
         filebeatSource.sourceIpInt =
-            IpToInt(filebeatSource.id_orig_h);
+			IpToInt(filebeatSource.source_ip);
 
         // Calculate the INTEGER version of the DESTINATION IP address
         filebeatSource.destIpInt =
-            IpToInt(filebeatSource.id_resp_h);
+			IpToInt(filebeatSource.destination_ip);
     }
 
 }

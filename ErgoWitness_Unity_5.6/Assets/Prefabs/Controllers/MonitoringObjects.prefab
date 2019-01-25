@@ -129,7 +129,7 @@ MonoBehaviour:
   monitorManager: {fileID: 114356144267389630}
   errorText: {fileID: 0}
   frequency: 0.445
-  indexName: filebeat
+  indexName: logstash
   fileLocation_queryTop: Bro/bro_Headers_TOP
   fileLocation_queryBottom: Bro/bro_Headers_BOTTOM
   _latest_time: 
@@ -150,7 +150,7 @@ MonoBehaviour:
   monitorManager: {fileID: 114356144267389630}
   errorText: {fileID: 0}
   frequency: 0.487
-  indexName: packetbeat
+  indexName: logstash
   fileLocation_queryTop: Packetbeat/packetbeat_Headers_TOP
   fileLocation_queryBottom: Packetbeat/packetbeat_Headers_BOTTOM
   _latest_time: 
